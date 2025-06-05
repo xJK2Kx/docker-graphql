@@ -30,6 +30,7 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         NEW_VERSION: ${{ steps.version.outputs.version }}
+        
       run: |
         echo $DOCKER_PASSWORD | docker login --username $DOCKER_USER --password-stdin
         echo "New Version: $NEW_VERSION !!!"
